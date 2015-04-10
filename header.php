@@ -18,33 +18,36 @@
       unset($_SESSION["status"]);
     }
     ?>
-	<ul id = "login">
-		<li class = login-statement>Login to your account:</li>
+    <?php
+    	if($_SERVER["PHP_SELF"] != "/signup.php"){
+			echo "<ul id = 'login'>
+					<li class = login-statement>Login to your account:</li>
 
-		<form name = "loginForm" action = "login-handler.php" method = "POST">
-			<li class = "login-user">
-				Username: <input type = "text" size = "25" name = "user" value = "<?php echo $email; ?>">
-			</li>
-			<li class = "login-pass">
-				Password: <input type = "password" size = "25" name = "pass">
-			</li>
-			<li>
-				<input type = "submit" name = "submitButtonLogin" value = "Submit">
-			</li>
-		</form>
-		<?php
-		if(isset($_SESSION["access_granted"]) && $_SESSION["access_granted"]){
-			//echo '<META HTTP-EQUIV="Refresh" Content="0; URL=account.php">';
-			echo "Welcome! <a href = /account.php>My Account</a> | <a href = /logoff.php>Logoff</a>";
-		}
-		else{
-		echo "<li class ='sign-up-link'>
-				Don't have an accout? <a href = /signup.php>Sign up!</a>
-			</li>";
-		}
-		?>
+					<form name = 'loginForm' action = 'login-handler.php' method = 'POST'>
+						<li class = 'login-user'>
+							Username: <input type = 'text' size = '25' name = 'user' value = $email>
+						</li>
+						<li class = 'login-pass'>
+							Password: <input type = 'password' size = '25' name = 'pass'>
+						</li>
+						<li>
+							<input type = 'submit' name = 'submitButtonLogin' value = 'Submit'>
+						</li>
+					</form>";
 
-	</ul>
+
+				if(isset($_SESSION["access_granted"]) && $_SESSION["access_granted"]){
+					//echo '<META HTTP-EQUIV="Refresh" Content="0; URL=account.php">';
+					echo "Welcome! <a href = /account.php>My Account</a> | <a href = /logoff.php>Logoff</a>";
+				}
+				else{
+				echo "<li class ='sign-up-link'>
+						Don't have an accout? <a href = /signup.php>Sign up!</a>
+					</li>";
+				}
+			echo "</ul>";
+		}
+	?>
 </div>
 
 <div class = "nav-bar">
@@ -81,6 +84,6 @@
 			else{
 				echo "<li><a href = /contact-us.php>Contact Us</a></li>";
 			}
-			?>
+		?>
 	</ul>
 </div>
