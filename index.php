@@ -15,5 +15,6 @@
 		</p>
 		<hr>
 	</div>
+	<?php include "footer.php"; ?>
 </Body>
 </HTML>

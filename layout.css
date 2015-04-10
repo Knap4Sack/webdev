@@ -6,33 +6,20 @@ body {
 		float: left;
 }
 
-@media all and (max-width:549px){
-	.login {
-		list-style-type: none;
-		color: #000000;
-	}
-}
-
-@media all and (min-width: 550px){
-	.login {
-			list-style-type: none;
-			color: #000000;
-			position: absolute;
-			left: 300px;
-			top: 260px;
-	}
+.login-statement {
+		padding-bottom: 10px;
 }
 
 .nav-bar {
-	clear: both;
-	width: 99%;
+		clear: both;
+		width: 99%;
 }
 
 .nav-bar > ul {
 /*		vertical-align: top;*/
 		background-color: #2299FF;
 		list-style-type: none;
-	}
+}
 
 .nav-bar > ul > li {
 		display: inline-block;
@@ -86,6 +73,11 @@ body {
 
 .contact-us > ul > li {
 		list-style-type: none;
+
+}
+.footer {
+		margin-bottom: 0px;
+		text-align: center;
 }
 
 .product-grid > ul > li {
@@ -105,6 +97,58 @@ body {
 		float: right;
 		margin-top: 50px;
 		margin-right: 100px;
+}
+
+.pass-requirements {
+		padding-left: 20px;
+		width: 200px;
+		font-size: 14;
+}
+
+@media all and (max-width:549px){
+	#login {
+		list-style-type: none;
+		color: #000000;
+	}
+}
+
+@media all and (min-width: 550px){
+	#login {
+		list-style-type: none;
+		color: #000000;
+		position: absolute;
+		left: 300px;
+		top: 230px;
+	}
+}
+
+@media all and (max-width:549px){
+	#status{
+		color: #FF0000;
+	}
+}
+@media all and (min-width: 550px){
+	#status{
+		color: #FF0000;
+		position: absolute;
+		left: 320px;
+		top: 220px;
+	}
+}
+
+#signup-page {
+		width: 50%;
+		margin-left: auto;
+		margin-right: auto;
+}
+
+#signup-form {
+		list-style-type: none;
+}
+
+#signup-form > li {
+		padding-top: 5px;
+		padding-bottom: 5px;
 }
 
 #current-page {

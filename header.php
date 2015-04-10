@@ -1,19 +1,49 @@
-	
+<?php
+	session_start();
+	if(isset($_SESSION["access_granted"]) && $_SESSION["access_granted"]){
+		//echo '<META HTTP-EQUIV="Refresh" Content="0; URL=account.php">';
+	}
+
+	$email = "";
+	if (isset($_SESSION["email"])){
+		$email = $_SESSION["email"];
+	}
+?>
+
 <div class = banner>
 	<img src = "banner-riats.png" alt = "Start the Riats"/>
-	<ul class = "login">
-		<li>Login to your account.</li>
-		<li>
-			<form>
-				Username: <input type = "text" name = "Username">
-			</form>
-		</li>
-		<li>
-			<form>
-				Passowrd: <input type = "text" name = "Password">
-			    <input type = "button" value = "Submit">
-			</form>
-		</li>
+	<?php
+    if (isset($_SESSION["status"])) {
+      echo "<div id='status'>" .  $_SESSION["status"] . "</div>";
+      unset($_SESSION["status"]);
+    }
+    ?>
+	<ul id = "login">
+		<li class = login-statement>Login to your account:</li>
+
+		<form name = "loginForm" action = "login-handler.php" method = "POST">
+			<li class = "login-user">
+				Username: <input type = "text" size = "25" name = "user" value = "<?php echo $email; ?>">
+			</li>
+			<li class = "login-pass">
+				Password: <input type = "password" size = "25" name = "pass">
+			</li>
+			<li>
+				<input type = "submit" name = "submitButtonLogin" value = "Submit">
+			</li>
+		</form>
+		<?php
+		if(isset($_SESSION["access_granted"]) && $_SESSION["access_granted"]){
+			//echo '<META HTTP-EQUIV="Refresh" Content="0; URL=account.php">';
+			echo "Welcome! <a href = /account.php>My Account</a> | <a href = /logoff.php>Logoff</a>";
+		}
+		else{
+		echo "<li class ='sign-up-link'>
+				Don't have an accout? <a href = /signup.php>Sign up!</a>
+			</li>";
+		}
+		?>
+
 	</ul>
 </div>
 

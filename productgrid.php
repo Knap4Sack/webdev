@@ -1,5 +1,5 @@
 <?php
-	$grid_size = 6;
+	$grid_size = 4;
 	if($grid_size > 0)
 	{
 		echo "<div class = 'product-grid'>";

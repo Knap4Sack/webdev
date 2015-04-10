@@ -7,5 +7,6 @@
 <Body>
 	<?php include "header.php"; ?>
 	<?php include "productgrid.php"; ?>
+	<?php include "footer.php"; ?>
 </Body>
 </HTML>

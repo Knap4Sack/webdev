@@ -5,11 +5,12 @@
 	<link rel="icon" type="image/png" href="favicon.png">
 </Head>
 <Body>
+
 	<?php include "header.php"; ?>
 		<div class = "contact-us">
 		<h1>SUPPORT</h1>
 		<p>Hopefully you're not having any problems with the website or buying your 
-		product (the sight is not currently functioning). Feel free to send us an 
+		product (the site is not currently functioning). Feel free to send us an 
 		e-mail of what your experience was with this site.
 		</p>
 		<ul>
@@ -18,5 +19,6 @@
 
 		</ul>
 		</div>
+	<?php include "footer.php"; ?>
 </Body>
 </HTML>
